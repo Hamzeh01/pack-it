@@ -1,22 +1,18 @@
 import { useState } from "react";
+import Logo from "./Logo";
+import Form from "./Form";
+import PackingList from "./PackingList";
+import Stats from "./Stats";
 
 export default function App() {
   const [items, setItems] = useState([]);
 
   function handleAddItem(item) {
-    setItems((item) => [...items, item]);
+    setItems((items) => [...items, item]);
   }
 
   function handleDeleteItem(id) {
     setItems((items) => items.filter((item) => item.id !== id));
-  }
-
-  function handleClearItems() {
-    const isConfirmed = window.confirm(
-      "Are you sure you want to delete all items?"
-    );
-
-    if (isConfirmed) setItems([]);
   }
 
   function handleToggleItem(id) {
@@ -27,8 +23,16 @@ export default function App() {
     );
   }
 
+  function handleClearItems() {
+    const isConfirmed = window.confirm(
+      "Are you sure you want to delete all items?"
+    );
+
+    if (isConfirmed) setItems([]);
+  }
+
   return (
-    <div>
+    <div className="app">
       <Logo />
       <Form onAddItems={handleAddItem} />
       <PackingList
@@ -36,9 +40,8 @@ export default function App() {
         onDeleteItems={handleDeleteItem}
         onToggleItems={handleToggleItem}
         onClearItems={handleClearItems}
-
       />
-      <Stats />
+      <Stats items={items} />
     </div>
   );
 }
