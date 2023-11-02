@@ -16,12 +16,29 @@ export default function App() {
       "Are you sure you want to delete all items?"
     );
 
-    if(isConfirmed) setItems([]);
+    if (isConfirmed) setItems([]);
+  }
+
+  function handleToggleItem(id) {
+    setItems((items) =>
+      items.map((item) =>
+        item.id === id ? { ...item, packed: !item.packed } : item
+      )
+    );
   }
 
   return (
     <div>
-      
+      <Logo />
+      <Form onAddItems={handleAddItem} />
+      <PackingList
+        items={items}
+        onDeleteItems={handleDeleteItem}
+        onToggleItems={handleToggleItem}
+        onClearItems={handleClearItems}
+
+      />
+      <Stats />
     </div>
-  )
+  );
 }
