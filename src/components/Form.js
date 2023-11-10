@@ -4,7 +4,7 @@ export default function Form({ onAddItems }) {
   const [description, setDescription] = useState("");
   const [quantity, setQuantity] = useState("1");
 
-  function handleSubmit(e) {
+  const handleSubmit = (e) => {
     e.preventDefault();
 
     if (!description) return;
@@ -20,7 +20,7 @@ export default function Form({ onAddItems }) {
 
     setDescription("");
     setQuantity(1);
-  }
+  };
 
   return (
     <form className="add-form" onSubmit={handleSubmit}>
