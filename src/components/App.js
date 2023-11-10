@@ -7,27 +7,22 @@ import Stats from "./Stats";
 export default function App() {
   const [items, setItems] = useState([]);
 
-  const handleAddItem = (item) => {
-    setItems((prevItems) => [...prevItems, item]);
-  };
+  const handleAddItem = (item) => setItems((prevItems) => [...prevItems, item]);
 
-  const handleDeleteItem = (id) => {
+  const handleDeleteItem = (id) =>
     setItems((prevItems) => prevItems.filter((item) => item.id !== id));
-  };
 
-  const handleToggleItem = (id) => {
+  const handleToggleItem = (id) =>
     setItems((prevItems) =>
       prevItems.map((item) =>
         item.id === id ? { ...item, packed: !item.packed } : item
       )
     );
-  };
 
   const handleClearItems = () => {
     const isConfirmed = window.confirm(
       "Are you sure you want to delete all items?"
     );
-
     if (isConfirmed) setItems([]);
   };
 

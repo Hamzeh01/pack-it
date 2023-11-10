@@ -1,8 +1,8 @@
 import { useState } from "react";
 
-export default function Form({ onAddItems }) {
+const Form = ({ onAddItems }) => {
   const [description, setDescription] = useState("");
-  const [quantity, setQuantity] = useState("1");
+  const [quantity, setQuantity] = useState(1);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -42,4 +42,6 @@ export default function Form({ onAddItems }) {
       <button>Add</button>
     </form>
   );
-}
+};
+
+export default Form;
