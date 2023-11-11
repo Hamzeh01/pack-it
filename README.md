@@ -54,7 +54,8 @@ Whether you're a frequent traveler or preparing for a one-time trip, Pack It sim
 
 ## Screenshots
 
-(public\screen.png)
+![Screenshot](public\screen.png)
+_PACK IT PROJECT_
 
 ## Live Demo
 
