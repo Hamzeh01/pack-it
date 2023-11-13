@@ -59,7 +59,7 @@ _PACK IT PROJECT_
 
 ## Live Demo
 
-<!-- Add a link to the live demo of your project here. -->
+Experience Pack It by trying out the live demo [here](https://pack-it-75zu.vercel.app/).
 
 ## Learn More
 
